@@ -15,6 +15,10 @@
   --tcolor-100: #333333;
   --tcolor-400: #272727;
   --tcolor-700: #1d1d1d;
+  --primary: #bf9673;
+  --primary-100: #bfa68f;
+  --primary-400: #a6785d;
+  --primary-700: #9f562e;
   --back-shadow: rgba(0, 0, 0, 0.2);
   --back-shadow-light: rgba(0, 0, 0, 0.1);
   --back-shadow-dark: rgba(0, 0, 0, 0.25);
@@ -200,7 +204,7 @@ body,
   color: var(--tcolor);
   font-size: 1rem;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

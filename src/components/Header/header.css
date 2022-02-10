@@ -163,6 +163,7 @@
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  z-index: 7;
 }
 .header-left {
   width: 15%;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import frame from "../../images/herobg.jpg";
 import "./home.css";
@@ -14,7 +14,7 @@ const Home = () => {
 			setHeaderBgColor(`rgba(159, 86, 46, ${per})`);
 			setHeaderCol("var(--tcolor)");
 		} else {
-			setHeaderBgColor("rgba(159, 86, 46, 1)");
+			setHeaderBgColor("rgb(159, 86, 46)");
 			setHeaderCol("var(--bgcolor)");
 		}
 	});

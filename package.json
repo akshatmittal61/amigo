@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
+    "emailjs-com": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
@@ -21,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass src/style.scss:src/style.css src/pages/Home/home.scss:src/pages/Home/home.css src/components/Header/header.scss:src/components/Header/header.css -w"
+    "sass": "sass src/style.scss:src/style.css src/pages/Home/home.scss:src/pages/Home/home.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css -w"
   },
   "eslintConfig": {
     "extends": [

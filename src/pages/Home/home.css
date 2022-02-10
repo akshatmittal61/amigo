@@ -16,7 +16,6 @@
   background-blend-mode: darken;
   background-color: var(--back-shadow);
   background-attachment: fixed;
-  position: relative;
 }
 .home-hero .header {
   position: fixed;
