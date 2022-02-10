@@ -1,3 +1,57 @@
-
+.home {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+}
+.home-hero {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-blend-mode: darken;
+  background-color: var(--back-shadow);
+  background-attachment: fixed;
+  position: relative;
+}
+.home-hero .header {
+  position: fixed;
+}
+.home-hero-logo {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: column;
+  position: absolute;
+  top: 13vh;
+}
+.home-hero-logo-brand {
+  height: 40%;
+  font-family: "Caveat", sans-serif;
+  font-size: 10rem;
+  line-height: 11rem;
+  letter-spacing: 0.35rem;
+}
+.home-hero-logo-subtitle {
+  height: 35%;
+  font-family: "Just Me again down here", cursive;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+.home-hero::after {
+  font-family: "Material Icons";
+  content: "expand_more";
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+}
 
 /*# sourceMappingURL=home.css.map */
