@@ -16,6 +16,17 @@
   background-blend-mode: darken;
   background-color: var(--back-shadow);
   background-attachment: fixed;
+  position: relative;
+}
+.home-hero::after {
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  content: "expand_more";
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
 }
 .home-hero .header {
   position: fixed;
@@ -43,14 +54,69 @@
   font-size: 3rem;
   line-height: 4rem;
 }
-.home-hero::after {
-  font-family: "Material Icons";
-  content: "expand_more";
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s ease-in-out infinite;
+.home-about {
+  width: 100%;
+  height: 60vh;
+  background-color: #9f562e;
+  color: var(--bgcolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-about-section {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.home-about-card {
+  width: 90%;
+  height: 12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.home-about-card-icon {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-about-card-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+.home-about-card-content {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+  padding: 0.75rem 0;
+}
+.home-about-card-content h3 {
+  padding: 0.5rem 0;
+}
+.home-about-card-content p {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+}
+.home-about-card-content p a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5rem;
+}
+.home-about-card-content p svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 /*# sourceMappingURL=home.css.map */

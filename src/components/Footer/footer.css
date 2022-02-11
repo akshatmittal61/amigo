@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  height: 70vh;
+  height: 75vh;
   background-color: var(--primary);
   z-index: 5;
   display: flex;
@@ -11,7 +11,7 @@
 }
 .footer-top {
   width: 100%;
-  height: calc(70vh - 3rem);
+  height: calc(75vh - 3rem);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -54,7 +54,8 @@
   height: 3rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  background-color: var(--back-shadow-dark);
+  background-color: rgba(0, 0, 0, 0.35);
+  color: var(--bgcolor);
   display: flex;
   justify-content: center;
   align-items: center;

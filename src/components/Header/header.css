@@ -164,6 +164,7 @@
   align-items: center;
   overflow: hidden;
   z-index: 7;
+  transition: all 0.25s ease-in-out;
 }
 .header-left {
   width: 15%;
