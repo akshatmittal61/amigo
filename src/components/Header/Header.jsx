@@ -1,15 +1,14 @@
 import React from "react";
 import "./header.css";
 import * as Icon from "react-feather";
-import { Link } from "react-router-dom";
 
 const Header = ({ style }) => {
 	return (
 		<header className="header" style={style}>
 			<div className="header-left">
-				<Link to="/" style={{ display: "none" }}>
-					<div className="header-left-brand">Amigo</div>
-				</Link>
+				<button>
+					<Icon.BarChart />
+				</button>
 			</div>
 			<div className="header-right">
 				<nav className="header-right-nav">

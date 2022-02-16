@@ -2,22 +2,28 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import * as Icon from "react-feather";
 import frame from "../../images/herobg.jpg";
+import diaryImg from "../../images/diary-1.png";
+import blogImg from "../../images/blog-1.png";
 import "./home.css";
 
 const Home = () => {
 	const vh = window.innerHeight / 100;
-	const t = 40 * vh;
-	const [headerBgColor, setHeaderBgColor] = useState("rgba(159, 86, 46, 0)");
-	const [headerCol, setHeaderCol] = useState("var(--tcolor)");
+	const t = 50 * vh;
+	const [bgcolor, setBgcolor] = useState("rgba(159, 86, 46, 0)");
+	const [color, setColor] = useState("var(--tcolor)");
+	const [boxShadow, setBoxShadow] = useState("none");
+	const [height, setHeight] = useState("13vh");
 	window.addEventListener("scroll", () => {
-		const h = t;
-		if (window.scrollY < h) {
-			const per = window.scrollY / h;
-			setHeaderBgColor(`rgba(159, 86, 46, ${per})`);
-			setHeaderCol("var(--tcolor)");
+		if (window.scrollY < t) {
+			setBgcolor(`rgba(159, 86, 46, ${window.scrollY / t})`);
+			setColor("var(--tcolor)");
+			setBoxShadow("none");
+			setHeight(`${13 - (window.scrollY / t) * 3}vh`);
 		} else {
-			setHeaderBgColor("rgb(159, 86, 46)");
-			setHeaderCol("var(--bgcolor)");
+			setBgcolor("rgb(159, 86, 46)");
+			setColor("var(--bgcolor)");
+			setBoxShadow("var(--shadow-3d)");
+			setHeight("10vh");
 		}
 	});
 	useEffect(() => {
@@ -62,10 +68,10 @@ const Home = () => {
 			>
 				<Header
 					style={{
-						backgroundColor: headerBgColor,
-						color: headerCol,
-						boxShadow:
-							window.scrollY > t ? "var(--shadow-3d)" : "none",
+						backgroundColor: bgcolor,
+						color: color,
+						boxShadow: boxShadow,
+						height: height,
 					}}
 				/>
 				<div className="home-hero-logo" data-aos="fade-up">
@@ -102,7 +108,48 @@ const Home = () => {
 				style={{
 					backgroundImage: `url(${frame})`,
 				}}
-			></div>
+			>
+				<div className="row">
+					<div className="col-lg-50 col-md-100 col-sm-100">
+						<div className="home-add-box">
+							<div className="home-add-icon">
+								<img src={diaryImg} alt="Diary" />
+							</div>
+							<div className="home-add-content">
+								<ul className="home-add-ul">
+									<li>Free</li>
+									<li>Encrypted security</li>
+									<li>User friendly environment</li>
+									<li>24*7 help</li>
+								</ul>
+								<button>
+									<span>Add new Diary</span>
+									<Icon.PlusCircle />
+								</button>
+							</div>
+						</div>
+					</div>
+					<div className="col-lg-50 col-md-100 col-sm-100">
+						<div className="home-add-box">
+							<div className="home-add-icon">
+								<img src={blogImg} alt="Diary" />
+							</div>
+							<div className="home-add-content">
+								<ul className="home-add-ul">
+									<li>Free</li>
+									<li>Encrypted security</li>
+									<li>User friendly environment</li>
+									<li>24*7 help</li>
+								</ul>
+								<button>
+									<span>Add new Blog</span>
+									<Icon.PlusCircle />
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

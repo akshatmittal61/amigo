@@ -7,15 +7,17 @@
   align-items: flex-start;
   flex-flow: column;
 }
-.home-hero {
+.home > * {
   width: 100%;
-  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-blend-mode: darken;
   background-color: var(--back-shadow);
   background-attachment: fixed;
+}
+.home-hero {
+  height: 100vh;
   position: relative;
 }
 .home-hero::after {
@@ -117,6 +119,85 @@
 .home-about-card-content p svg {
   width: 1rem;
   height: 1rem;
+}
+.home-add {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-add-box {
+  width: 75%;
+  height: 70vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(7.5px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+.home-add-icon {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-add-icon img {
+  object-fit: cover;
+  max-width: 85%;
+  max-height: 85%;
+}
+.home-add-content {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+}
+.home-add-ul {
+  list-style: none;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+.home-add-ul li {
+  margin: 0.5rem 0;
+}
+.home-add-ul li::marker {
+  content: " > ";
+}
+.home-add button {
+  border: none;
+  outline: none;
+  padding: 0.875rem 1rem 0.875rem 1.75rem;
+  background-color: var(--yellow);
+  background-color: #fbbc05;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: relative;
+  border-radius: 4px;
+  transition: all var(--transition-time) ease-in-out;
+}
+.home-add button span {
+  white-space: nowrap;
+}
+.home-add button svg {
+  margin: 0 0.5rem;
+}
+.home-add button:hover {
+  filter: brightness(0.95);
+  border: none;
+  outline: none;
+}
+.home-add button:active, .home-add button:focus {
+  border: none;
+  outline: 4px solid rgba(251, 188, 5, 0.35);
 }
 
 /*# sourceMappingURL=home.css.map */
