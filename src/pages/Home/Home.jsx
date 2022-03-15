@@ -35,19 +35,21 @@ const Home = () => {
 			title: "Simple and Intuitive",
 			description:
 				"Amigo features a minimalistic and clean design, letting you focus on what you feel and want to write.",
+			layout: [33, 50, 100],
 		},
 		{
 			icon: <Icon.Lock />,
 			title: "Private and Secure",
 			description:
 				"Your data always remains secure. The journal is encrypted with a password and stores in cloud.",
+			layout: [33, 50, 100],
 		},
 		{
 			icon: <Icon.Gift />,
 			title: "Completely free and open source",
 			description: (
 				<>
-					The app is free and open source and it\'s code can always be
+					The app is free and open source and it's code can always be
 					found on github
 					<a href="https://github.com/akshatmittal61/amigo">
 						<Icon.GitHub />
@@ -55,6 +57,7 @@ const Home = () => {
 					</a>
 				</>
 			),
+			layout: [33, 100, 100]
 		},
 	];
 
@@ -86,7 +89,7 @@ const Home = () => {
 					<div className="row">
 						{homeAboutCards.map((card, index) => (
 							<div
-								className="col-lg-33 col-md-50 col-sm-100"
+								className={`"col-lg-${card.layout[0]} col-md-${card.layout[1]} col-sm-${card.layout[2]}`}
 								key={index}
 							>
 								<div className="home-about-card">
