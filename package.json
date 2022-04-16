@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass src/style.scss:src/style.css src/pages/Home/home.scss:src/pages/Home/home.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css src/components/Sidebar/sidebar.scss:src/components/Sidebar/sidebar.css -w"
+    "sass": "sass src/style.scss:src/style.css src/pages/Home/home.scss:src/pages/Home/home.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css -w"
   },
   "eslintConfig": {
     "extends": [

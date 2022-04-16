@@ -1,203 +1,246 @@
+.row {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.row > * {
+  width: 100%;
+}
+
+[class^=col] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 880px) {
+  .row .col-lg-100 {
+    width: 100%;
+  }
+  .row .col-lg-83 {
+    width: 83.333%;
+  }
+  .row .col-lg-80 {
+    width: 80%;
+  }
+  .row .col-lg-75 {
+    width: 75%;
+  }
+  .row .col-lg-70 {
+    width: 70%;
+  }
+  .row .col-lg-66 {
+    width: 66.666%;
+  }
+  .row .col-lg-60 {
+    width: 60%;
+  }
+  .row .col-lg-50 {
+    width: 50%;
+  }
+  .row .col-lg-40 {
+    width: 40%;
+  }
+  .row .col-lg-33 {
+    width: 33.333%;
+  }
+  .row .col-lg-30 {
+    width: 30%;
+  }
+  .row .col-lg-25 {
+    width: 25%;
+  }
+  .row .col-lg-20 {
+    width: 20%;
+  }
+  .row .col-lg-16 {
+    width: 16.666%;
+  }
+  .row .col-lg-10 {
+    width: 10%;
+  }
+}
+@media (min-width: 672px) and (max-width: 879.98px) {
+  .row .col-md-100 {
+    width: 100%;
+  }
+  .row .col-md-83 {
+    width: 83.333%;
+  }
+  .row .col-md-80 {
+    width: 80%;
+  }
+  .row .col-md-75 {
+    width: 75%;
+  }
+  .row .col-md-70 {
+    width: 70%;
+  }
+  .row .col-md-66 {
+    width: 66.666%;
+  }
+  .row .col-md-60 {
+    width: 60%;
+  }
+  .row .col-md-50 {
+    width: 50%;
+  }
+  .row .col-md-40 {
+    width: 40%;
+  }
+  .row .col-md-33 {
+    width: 33.333%;
+  }
+  .row .col-md-30 {
+    width: 30%;
+  }
+  .row .col-md-25 {
+    width: 25%;
+  }
+  .row .col-md-20 {
+    width: 20%;
+  }
+  .row .col-md-16 {
+    width: 16.666%;
+  }
+  .row .col-md-10 {
+    width: 10%;
+  }
+}
+@media (max-width: 671.98px) {
+  .row .col-sm-100 {
+    width: 100%;
+  }
+  .row .col-sm-83 {
+    width: 83.333%;
+  }
+  .row .col-sm-80 {
+    width: 80%;
+  }
+  .row .col-sm-75 {
+    width: 75%;
+  }
+  .row .col-sm-70 {
+    width: 70%;
+  }
+  .row .col-sm-66 {
+    width: 66.666%;
+  }
+  .row .col-sm-60 {
+    width: 60%;
+  }
+  .row .col-sm-50 {
+    width: 50%;
+  }
+  .row .col-sm-40 {
+    width: 40%;
+  }
+  .row .col-sm-33 {
+    width: 33.333%;
+  }
+  .row .col-sm-30 {
+    width: 30%;
+  }
+  .row .col-sm-25 {
+    width: 25%;
+  }
+  .row .col-sm-20 {
+    width: 20%;
+  }
+  .row .col-sm-16 {
+    width: 16.666%;
+  }
+  .row .col-sm-10 {
+    width: 10%;
+  }
+}
 .home {
   width: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-flow: column;
-}
-.home > * {
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-blend-mode: darken;
-  background-color: var(--back-shadow);
-  background-attachment: fixed;
 }
 .home-hero {
-  height: 100vh;
-  position: relative;
-}
-.home-hero::after {
-  font-family: "Material Icons";
-  font-size: 1.5rem;
-  content: "expand_more";
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s ease-in-out infinite;
-}
-.home-hero .header {
-  position: fixed;
-}
-.home-hero-logo {
-  width: 100%;
-  height: 75vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-flow: column;
-  position: absolute;
-  top: 13vh;
-}
-.home-hero-logo-brand {
-  height: 40%;
-  font-family: "Caveat", sans-serif;
-  font-size: 10rem;
-  line-height: 11rem;
-  letter-spacing: 0.35rem;
-}
-.home-hero-logo-subtitle {
-  height: 35%;
-  font-family: "Just Me again down here", cursive;
-  font-size: 3rem;
-  line-height: 4rem;
-}
-.home-about {
-  width: 100%;
+  width: 100vw;
   height: 60vh;
-  background-color: #9f562e;
-  color: var(--bgcolor);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-about-section {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-.home-about-card {
-  width: 90%;
-  height: 12.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-}
-.home-about-card-icon {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-about-card-icon svg {
-  width: 3rem;
-  height: 3rem;
-}
-.home-about-card-content {
-  width: 100%;
-  height: 70%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-flow: column;
-  padding: 0.75rem 0;
-}
-.home-about-card-content h3 {
-  padding: 0.5rem 0;
-}
-.home-about-card-content p {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-flow: column;
-}
-.home-about-card-content p a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.5rem;
-}
-.home-about-card-content p svg {
-  width: 1rem;
-  height: 1rem;
-}
-.home-add {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-add-box {
-  width: 75%;
-  height: 70vh;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(7.5px);
-  border: 2px solid rgba(255, 255, 255, 0.35);
-}
-.home-add-icon {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-add-icon img {
-  object-fit: cover;
-  max-width: 85%;
-  max-height: 85%;
-}
-.home-add-content {
-  width: 100%;
-  height: 50%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-flow: column;
+  background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray);
+  background-attachment: fixed;
+  color: var(--favicon);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
-.home-add-ul {
-  list-style: none;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-}
-.home-add-ul li {
-  margin: 0.5rem 0;
-}
-.home-add-ul li::marker {
-  content: " > ";
-}
-.home-add button {
-  border: none;
-  outline: none;
-  padding: 0.875rem 1rem 0.875rem 1.75rem;
-  background-color: var(--yellow);
-  background-color: #fbbc05;
+.home-hero-image {
+  width: 50%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  position: relative;
-  border-radius: 4px;
-  transition: all var(--transition-time) ease-in-out;
 }
-.home-add button span {
+.home-hero-title {
+  font-size: 6rem;
+  line-height: 7rem;
+  font-family: "Caveat", sans-serif;
+  letter-spacing: 0.35rem;
+}
+.home-hero-subtitle {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-family: "Just Me again down here", cursive;
+}
+.home-about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+.home-about-card {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+}
+@media (max-width: 672px) {
+  .home-about-card {
+    flex-flow: row;
+    text-align: left;
+  }
+}
+.home-about-card-icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem 0 2rem;
+}
+.home-about-card-icon svg {
+  width: 4rem;
+  height: 4rem;
+  color: var(--wp--preset--color--vivid-cyan-blue);
+}
+.home-about-card-content {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.home-about-card-content__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
   white-space: nowrap;
+  padding: 0.5rem 0;
 }
-.home-add button svg {
-  margin: 0 0.5rem;
-}
-.home-add button:hover {
-  filter: brightness(0.95);
-  border: none;
-  outline: none;
-}
-.home-add button:active, .home-add button:focus {
-  border: none;
-  outline: 4px solid rgba(251, 188, 5, 0.35);
+.home-about-card-content__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.75rem;
 }
 
 /*# sourceMappingURL=home.css.map */
