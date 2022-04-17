@@ -3,6 +3,7 @@ import { Facebook, GitHub, Instagram, Linkedin } from "react-feather";
 import waves from "../../images/waves.svg";
 import laptop from "../../images/laptop.svg";
 import "./footer.css";
+import Button from "../Button/Button";
 
 const Footer = () => {
 	const [user, setUser] = useState({
@@ -79,8 +80,8 @@ const Footer = () => {
 							</div>
 						</div>
 						<div className="footer-top-form-buttons">
-							<button type="reset">Cancel</button>
-							<button type="submit">Submit</button>
+							<Button text="Cancel" type="reset" />
+							<Button text="Submit" type="submit" />
 						</div>
 					</form>
 				</div>
