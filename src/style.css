@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Cookie&family=Dancing+Script&family=Gaegu&family=Handlee&family=Indie+Flower&family=Just+Me+Again+Down+Here&family=Kalam&family=Megrim&family=Montserrat:wght@100;400;700&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@100;400;700&family=Redressed&family=Reenie+Beanie&family=Roboto&family=Sacramento&display=swap");
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
