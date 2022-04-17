@@ -156,111 +156,151 @@
     width: 10%;
   }
 }
-.home {
+.footer {
   width: 100%;
-}
-.home-hero {
-  width: 100vw;
-  height: 60vh;
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-flow: column;
-  background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple);
-  background-attachment: fixed;
-  color: var(--wp--preset--color--white);
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  color: var(--ast-global-color-4);
+  overflow: hidden;
 }
-.home-hero-image {
-  width: 50%;
-  height: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-hero-image img {
-  border-radius: 500px;
-  outline: 8px solid rgba(255, 255, 255, 0.25);
-  background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray);
-}
-.home-hero-title {
-  font-size: 6rem;
-  line-height: 7rem;
-  font-family: "Caveat", sans-serif;
-  letter-spacing: 0.35rem;
-}
-.home-hero-subtitle {
-  font-size: 2.5rem;
-  line-height: 3rem;
-  font-family: "Just Me again down here", cursive;
-}
-.home-ss {
+.footer-top {
   width: 100%;
-  height: 75vh;
+  height: 80%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 3rem 0;
-  padding: 3rem 0;
 }
-.home-about {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
+@media (max-width: 880px) {
+  .footer-top {
+    justify-content: flex-end;
+  }
 }
-.home-about-card {
-  width: 90%;
+.footer-top-image {
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  text-align: center;
+  align-items: flex-end;
 }
-@media (max-width: 672px) {
-  .home-about-card {
-    flex-flow: row;
-    text-align: left;
+@media (max-width: 880px) {
+  .footer-top-image {
+    display: none;
   }
 }
-.home-about-card-icon {
-  width: 100%;
+.footer-top-content {
+  width: 55%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-flow: column;
+  padding: 0 1rem;
+}
+@media (max-width: 880px) {
+  .footer-top-content {
+    width: 60%;
+  }
+}
+.footer-top-content h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin: 2rem 0;
+}
+.footer-top-form {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-flow: column;
+}
+.footer-top-form-inputs {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 2rem 2rem 0 2rem;
 }
-.home-about-card-icon svg {
-  width: 4rem;
-  height: 4rem;
-  color: var(--wp--preset--color--vivid-cyan-blue);
-}
-.home-about-card-content {
-  width: 100%;
-  padding: 1.5rem;
+.footer-top-form-group {
+  width: 50%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-flow: column;
 }
-.home-about-card-content__title {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  white-space: nowrap;
-  padding: 0.5rem 0;
+.footer-top-form input,
+.footer-top-form textarea {
+  width: 93%;
+  margin: 0.75rem;
+  border-radius: 8px;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.15);
 }
-.home-about-card-content__subtitle {
-  font-size: 1.1rem;
-  line-height: 1.75rem;
+.footer-top-form input::placeholder,
+.footer-top-form textarea::placeholder {
+  color: var(--wp--preset--color--cyan-bluish-gray);
 }
-.home-about a {
-  color: var(--color-main);
+.footer-top-form input:focus, .footer-top-form input:active,
+.footer-top-form textarea:focus,
+.footer-top-form textarea:active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
-.home-about a:hover {
-  color: var(--color-main-hover);
+.footer-top-form input {
+  height: 45%;
+}
+.footer-top-form textarea {
+  height: 100%;
+}
+.footer-top-form-buttons {
+  width: 100%;
+  height: 20%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-bottom {
+  width: 100%;
+  height: 20%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.footer-bottom-github {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column;
+}
+.footer-bottom-github > div,
+.footer-bottom-github span,
+.footer-bottom-github a,
+.footer-bottom-github svg {
+  margin: 0 0.1rem;
+  padding: 0.15rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-bottom-socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer-bottom-socials a {
+  margin: 0 1rem;
+}
+.footer-bottom-socials a img,
+.footer-bottom-socials a svg {
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=footer.css.map */

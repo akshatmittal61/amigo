@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.css";
 import favicon from "../../images/favicon.svg";
+import home_ss from "../../images/home_ss.png";
 import { Gift, Lock, Smile } from "react-feather";
 
 const Home = () => {
@@ -48,11 +49,15 @@ const Home = () => {
 					<span>A safe place for all your thoughts</span>
 				</div>
 			</div>
+			<div className="home-ss">
+				<img src={home_ss} alt="Home Page" />
+			</div>
 			<div className="home-about">
 				<div className="row">
-					{homeAboutCards.map((card) => (
+					{homeAboutCards.map((card, index) => (
 						<div
 							className={`col-lg-${card.layout[0]} col-md-${card.layout[1]} col-sm-${card.layout[2]}`}
+							key={index}
 						>
 							<div className="home-about-card">
 								<div className="home-about-card-icon">
