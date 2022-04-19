@@ -238,6 +238,12 @@
   height: 4rem;
   color: var(--wp--preset--color--vivid-cyan-blue);
 }
+@media (max-width: 672px) {
+  .home-about-card-icon {
+    width: 20%;
+    padding: 1rem;
+  }
+}
 .home-about-card-content {
   width: 100%;
   padding: 1.5rem;
@@ -255,6 +261,13 @@
 .home-about-card-content__subtitle {
   font-size: 1.1rem;
   line-height: 1.75rem;
+}
+@media (max-width: 672px) {
+  .home-about-card-content {
+    align-items: flex-start;
+    width: 80%;
+    text-align: left;
+  }
 }
 .home-about a {
   color: var(--color-main);

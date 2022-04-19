@@ -390,6 +390,7 @@ body,
   word-spacing: 0.25rem;
   line-height: 1.25rem;
   transition: all var(--transition-time) ease-in-out;
+  overflow-x: hidden;
 }
 
 #root {

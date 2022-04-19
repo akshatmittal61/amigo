@@ -19,6 +19,9 @@ button {
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+.btn:active, .btn:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .btn-sm {
   font-size: 0.875rem;
   padding: 0.6rem 1rem;
