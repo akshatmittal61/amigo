@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Airplay, Home, Info, LogIn } from "react-feather";
 import { Link } from "react-router-dom";
 import GlobalContext from "../../Context/GlobalContext";
 import "./navigation.css";
@@ -15,33 +16,57 @@ const Navigation = () => {
 			});
 		};
 	}, [setOpenNav]);
+	const navLinks = [
+		{
+			icon: <Home />,
+			link: "/",
+			title: "Home",
+		},
+		{
+			icon: <Info />,
+			link: "/about",
+			title: "About Amigo",
+		},
+		{
+			icon: <Airplay />,
+			link: "/dashboard",
+			title: "Dashboard",
+		},
+		{
+			icon: <LogIn />,
+			link: "/login",
+			title: "Login",
+		},
+	];
 	return (
-		<>
-			<label htmlFor="nav" className={`nav-btn ${openNav && "nav-open"}`}>
-				<input
-					type="checkbox"
-					name="nav"
-					id="nav"
-					value={openNav}
-					onChange={() => setOpenNav(!openNav)}
-				/>
-				<div className="nav-button">
-					<span></span>
-				</div>
-			</label>
-			<div className={`nav-container ${openNav && "nav-open"}`}>
-				<nav className="nav">
-					<ul className="nav-ul">
-						<li className="nav-li">
-							<Link to="/">
-								<span className="material-icons">home</span>
-								<span className="nav-span">Home</span>
+		<div className={`nav ${openNav && "nav-open"}`}>
+			<button className="nav-label" onClick={() => setOpenNav(!openNav)}>
+				<span className="nav-label__line"></span>
+			</button>
+			<nav
+				className="nav-container"
+				data-aos="fade-left"
+				style={{
+					transform: openNav ? "none" : "translateX(100%)",
+				}}
+			>
+				<ul className="nav-ul">
+					{navLinks.map((navLink, index) => (
+						<li className="nav-li" key={index}>
+							<Link to={navLink.link}>
+								<span className="nav-li__icon">
+									{navLink.icon}
+								</span>
+								<span className="nav-li__title">
+									{navLink.title}
+								</span>
 							</Link>
 						</li>
-					</ul>
-				</nav>
-			</div>
-		</>
+					))}
+				</ul>
+			</nav>
+			<div className="nav-cover" onClick={() => setOpenNav(false)}></div>
+		</div>
 	);
 };
 
