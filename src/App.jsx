@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation/Navigation";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import GlobalContext from "./Context/GlobalContext";
+import Register from "./pages/Register/Register";
 
 const App = () => {
 	AOS.init();
@@ -21,6 +22,7 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
 			</Routes>
 			{location.pathname !== "/login" &&
 				location.pathname !== "/register" && <Footer />}

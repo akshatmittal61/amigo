@@ -1,0 +1,275 @@
+.row {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.row > * {
+  width: 100%;
+}
+
+[class^=col] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 880px) {
+  .row .col-lg-100 {
+    width: 100%;
+  }
+  .row .col-lg-83 {
+    width: 83.333%;
+  }
+  .row .col-lg-80 {
+    width: 80%;
+  }
+  .row .col-lg-75 {
+    width: 75%;
+  }
+  .row .col-lg-70 {
+    width: 70%;
+  }
+  .row .col-lg-66 {
+    width: 66.666%;
+  }
+  .row .col-lg-60 {
+    width: 60%;
+  }
+  .row .col-lg-50 {
+    width: 50%;
+  }
+  .row .col-lg-40 {
+    width: 40%;
+  }
+  .row .col-lg-33 {
+    width: 33.333%;
+  }
+  .row .col-lg-30 {
+    width: 30%;
+  }
+  .row .col-lg-25 {
+    width: 25%;
+  }
+  .row .col-lg-20 {
+    width: 20%;
+  }
+  .row .col-lg-16 {
+    width: 16.666%;
+  }
+  .row .col-lg-10 {
+    width: 10%;
+  }
+}
+@media (min-width: 672px) and (max-width: 879.98px) {
+  .row .col-md-100 {
+    width: 100%;
+  }
+  .row .col-md-83 {
+    width: 83.333%;
+  }
+  .row .col-md-80 {
+    width: 80%;
+  }
+  .row .col-md-75 {
+    width: 75%;
+  }
+  .row .col-md-70 {
+    width: 70%;
+  }
+  .row .col-md-66 {
+    width: 66.666%;
+  }
+  .row .col-md-60 {
+    width: 60%;
+  }
+  .row .col-md-50 {
+    width: 50%;
+  }
+  .row .col-md-40 {
+    width: 40%;
+  }
+  .row .col-md-33 {
+    width: 33.333%;
+  }
+  .row .col-md-30 {
+    width: 30%;
+  }
+  .row .col-md-25 {
+    width: 25%;
+  }
+  .row .col-md-20 {
+    width: 20%;
+  }
+  .row .col-md-16 {
+    width: 16.666%;
+  }
+  .row .col-md-10 {
+    width: 10%;
+  }
+}
+@media (max-width: 671.98px) {
+  .row .col-sm-100 {
+    width: 100%;
+  }
+  .row .col-sm-83 {
+    width: 83.333%;
+  }
+  .row .col-sm-80 {
+    width: 80%;
+  }
+  .row .col-sm-75 {
+    width: 75%;
+  }
+  .row .col-sm-70 {
+    width: 70%;
+  }
+  .row .col-sm-66 {
+    width: 66.666%;
+  }
+  .row .col-sm-60 {
+    width: 60%;
+  }
+  .row .col-sm-50 {
+    width: 50%;
+  }
+  .row .col-sm-40 {
+    width: 40%;
+  }
+  .row .col-sm-33 {
+    width: 33.333%;
+  }
+  .row .col-sm-30 {
+    width: 30%;
+  }
+  .row .col-sm-25 {
+    width: 25%;
+  }
+  .row .col-sm-20 {
+    width: 20%;
+  }
+  .row .col-sm-16 {
+    width: 16.666%;
+  }
+  .row .col-sm-10 {
+    width: 10%;
+  }
+}
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #4f6cff;
+  letter-spacing: 0.1rem;
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+}
+.register-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+}
+.register-back svg {
+  margin: 0 0.5rem 0 0;
+}
+.register-content {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+  color: var(--ast-global-color-5);
+}
+@media (max-width: 880px) {
+  .register-content {
+    width: 70%;
+  }
+}
+@media (max-width: 672px) {
+  .register-content {
+    width: 90%;
+  }
+}
+.register-head {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin: 1rem 0;
+}
+.register-box {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+}
+.register-form {
+  width: 90%;
+  height: 70%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+}
+@media (max-width: 880px) {
+  .register-form {
+    width: 80%;
+  }
+}
+@media (max-width: 672px) {
+  .register-form {
+    width: 90%;
+  }
+}
+.register-form-group {
+  width: 100%;
+  margin: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--ast-global-color-5);
+}
+.register-form label svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.register-form input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem 3rem;
+  color: var(--ast-global-color-5);
+}
+.register-form input::placeholder {
+  color: var(--ast-global-color-6);
+}
+.register-form input:active, .register-form input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.register-form button {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/*# sourceMappingURL=register.css.map */
