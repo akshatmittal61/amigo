@@ -50,6 +50,7 @@ const Login = () => {
 								placeholder="Username"
 								value={user.username}
 								onChange={handleChange}
+								required
 							/>
 						</div>
 						<div className="login-form-group">
@@ -62,6 +63,7 @@ const Login = () => {
 								placeholder="Password"
 								value={user.password}
 								onChange={handleChange}
+								required
 							/>
 						</div>
 						<div className="login-form-group">

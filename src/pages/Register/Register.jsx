@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ArrowLeftCircle, AtSign, Key, Lock, Mail, User } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import SnackBar from "../../components/SnackBar/SnackBar";
 import "./register.css";
 
 const Register = () => {
@@ -14,6 +15,12 @@ const Register = () => {
 		password: "",
 		confirmPassword: "",
 	});
+	const [snack, setSnack] = useState({
+		text: "Registered successfuly, create your profile now",
+		bgColor: "var(--green)",
+		color: "var(--white)",
+	});
+	const [open, setOpen] = useState(false);
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setUser({
@@ -23,11 +30,40 @@ const Register = () => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(user);
-		setUser({
-			username: "",
-			password: "",
-		});
+		if (user.password !== user.confirmPassword) {
+			setSnack({
+				text: "Passwords do not match",
+				bgColor: "var(--red)",
+				color: "var(--white)",
+			});
+			setUser({
+				...user,
+				confirmPassword: "",
+			});
+			setOpen(true);
+			setTimeout(() => {
+				setOpen(false);
+			}, 5000);
+		} else {
+			setSnack({
+				text: "Registered successfuly, create your profile now",
+				bgColor: "var(--green)",
+				color: "var(--white)",
+			});
+			setOpen(true);
+			setTimeout(() => {
+				setOpen(false);
+			}, 5000);
+			console.log(user);
+			setUser({
+				fname: "",
+				lname: "",
+				email: "",
+				username: "",
+				password: "",
+				confirmPassword: "",
+			});
+		}
 	};
 	return (
 		<div className="register">
@@ -56,6 +92,7 @@ const Register = () => {
 										placeholder="First Name"
 										value={user.fname}
 										onChange={handleChange}
+										required
 									/>
 								</div>
 							</div>
@@ -70,6 +107,7 @@ const Register = () => {
 										placeholder="Last Name"
 										value={user.lname}
 										onChange={handleChange}
+										required
 									/>
 								</div>
 							</div>
@@ -84,6 +122,7 @@ const Register = () => {
 										placeholder="E Mail"
 										value={user.email}
 										onChange={handleChange}
+										required
 									/>
 								</div>
 							</div>
@@ -98,6 +137,7 @@ const Register = () => {
 										placeholder="Username"
 										value={user.username}
 										onChange={handleChange}
+										required
 									/>
 								</div>
 							</div>
@@ -112,6 +152,7 @@ const Register = () => {
 										placeholder="Password"
 										value={user.password}
 										onChange={handleChange}
+										required
 									/>
 								</div>
 							</div>
@@ -126,6 +167,7 @@ const Register = () => {
 										placeholder="Confirm Password"
 										value={user.confirmPassword}
 										onChange={handleChange}
+										required
 									/>
 								</div>
 							</div>
@@ -140,6 +182,14 @@ const Register = () => {
 					</div>
 				</div>
 			</div>
+			{open && (
+				<SnackBar
+					text={snack.text}
+					bgColor={snack.bgColor}
+					color={snack.color}
+					close={() => setOpen(false)}
+				/>
+			)}
 		</div>
 	);
 };
