@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from "react";
+import "./style.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Home from "./pages/Home/Home";
@@ -8,6 +9,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import GlobalContext from "./Context/GlobalContext";
 import Register from "./pages/Register/Register";
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 const App = () => {
 	AOS.init();
@@ -23,6 +26,14 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
+				<Route
+					path="/dashboard"
+					element={
+						<PrivateRoute>
+							<Dashboard />
+						</PrivateRoute>
+					}
+				/>
 			</Routes>
 			{location.pathname !== "/login" &&
 				location.pathname !== "/register" && <Footer />}

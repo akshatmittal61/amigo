@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { ArrowLeftCircle, AtSign, Key } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import GlobalContext from "../../Context/GlobalContext";
 import "./login.css";
 
 const Login = () => {
 	const navigate = useNavigate();
+	const { setIsAuthenticated } = useContext(GlobalContext);
 	const [user, setUser] = useState({
 		username: "",
 		password: "",
@@ -24,6 +26,7 @@ const Login = () => {
 			username: "",
 			password: "",
 		});
+		setIsAuthenticated(true);
 	};
 	return (
 		<section className="login">
