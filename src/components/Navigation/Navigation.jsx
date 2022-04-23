@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import { Airplay, Home, Info, LogIn } from "react-feather";
+import { Airplay, Home, Info, LogIn, LogOut } from "react-feather";
 import { Link } from "react-router-dom";
 import GlobalContext from "../../Context/GlobalContext";
 import "./navigation.css";
 
 const Navigation = () => {
-	const { openNav, setOpenNav } = useContext(GlobalContext);
+	const { openNav, setOpenNav, isAuthenticated } = useContext(GlobalContext);
 	useEffect(() => {
 		document.addEventListener("keydown", (e) => {
 			if (e.key === "Escape") setOpenNav(false);
@@ -33,9 +33,9 @@ const Navigation = () => {
 			title: "Dashboard",
 		},
 		{
-			icon: <LogIn />,
-			link: "/login",
-			title: "Login",
+			icon: isAuthenticated ? <LogOut /> : <LogIn />,
+			link: isAuthenticated ? "/logout" : "/login",
+			title: isAuthenticated ? "Logout" : "Login",
 		},
 	];
 	return (

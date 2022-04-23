@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass src/style.scss:src/style.css src/pages/Home/home.scss:src/pages/Home/home.css src/pages/Dashboard/dashboard.scss:src/pages/Dashboard/dashboard.css src/pages/Login/login.scss:src/pages/Login/login.css src/pages/Register/register.scss:src/pages/Register/register.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css src/components/Button/button.scss:src/components/Button/button.css src/components/Navigation/navigation.scss:src/components/Navigation/navigation.css src/components/SnackBar/snackbar.scss:src/components/SnackBar/snackbar.css -w"
+    "sass": "sass src/style.scss:src/style.css src/pages/Home/home.scss:src/pages/Home/home.css src/pages/Dashboard/dashboard.scss:src/pages/Dashboard/dashboard.css src/pages/Login/login.scss:src/pages/Login/login.css src/pages/Register/register.scss:src/pages/Register/register.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css src/components/Button/button.scss:src/components/Button/button.css src/components/Navigation/navigation.scss:src/components/Navigation/navigation.css src/components/SnackBar/snackbar.scss:src/components/SnackBar/snackbar.css src/components/Main/main.scss:src/components/Main/main.css -w"
   },
   "eslintConfig": {
     "extends": [

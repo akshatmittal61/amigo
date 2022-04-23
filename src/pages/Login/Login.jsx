@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { ArrowLeftCircle, AtSign, Key } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
@@ -7,7 +7,8 @@ import "./login.css";
 
 const Login = () => {
 	const navigate = useNavigate();
-	const { setIsAuthenticated } = useContext(GlobalContext);
+	const { isAuthenticated, setIsAuthenticated, setIsLoading } =
+		useContext(GlobalContext);
 	const [user, setUser] = useState({
 		username: "",
 		password: "",
@@ -27,7 +28,14 @@ const Login = () => {
 			password: "",
 		});
 		setIsAuthenticated(true);
+		setIsLoading(false);
+		localStorage.setItem("isAuthenticated", true);
 	};
+	useEffect(() => {
+		console.log('Login');
+		if (isAuthenticated) navigate("/dashboard");
+	}, [isAuthenticated]);
+
 	return (
 		<section className="login">
 			<Button

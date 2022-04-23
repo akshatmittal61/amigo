@@ -11,6 +11,7 @@ import GlobalContext from "./Context/GlobalContext";
 import Register from "./pages/Register/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Logout from "./components/Logout";
 
 const App = () => {
 	AOS.init();
@@ -31,6 +32,14 @@ const App = () => {
 					element={
 						<PrivateRoute>
 							<Dashboard />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/logout"
+					element={
+						<PrivateRoute>
+							<Logout />
 						</PrivateRoute>
 					}
 				/>

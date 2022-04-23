@@ -160,7 +160,7 @@
   position: fixed;
   top: 2rem;
   right: 2rem;
-  z-index: 6;
+  z-index: 10;
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -199,7 +199,7 @@
   right: 0;
   width: 30%;
   height: 100%;
-  z-index: 5;
+  z-index: 9;
   box-shadow: var(--shadow-3d);
   background-color: #4f6cff;
   letter-spacing: 0.1rem;
@@ -283,7 +283,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 8;
   transition: none;
 }
 .nav-open .nav-cover {
