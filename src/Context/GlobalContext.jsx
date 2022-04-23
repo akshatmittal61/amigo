@@ -26,6 +26,7 @@ export const GlobalProvider = ({ children }) => {
 		dob: "2002-06-25",
 		gender: "Male",
 		avatar: "https://avatars.githubusercontent.com/u/84612609?v=4",
+		id: '12enln21e'
 	});
 	return (
 		<GlobalContext.Provider

@@ -168,6 +168,7 @@
   flex-flow: column;
   color: var(--ast-global-color-4);
   overflow: hidden;
+  background-color: var(--bgcolor);
 }
 .footer-top {
   width: 100%;

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import favicon from "../../images/favicon.svg";
 import home_ss from "../../images/home_ss.png";
 import { Gift, Lock, Smile } from "react-feather";
 
 const Home = () => {
+	useEffect(() => {
+		window.scroll(0, 0);
+	}, []);
 	const homeAboutCards = [
 		{
 			icon: <Smile />,
