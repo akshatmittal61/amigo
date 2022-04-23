@@ -36,7 +36,7 @@ const Dashboard = () => {
 					<div className="row">
 						{diaries.map((diary, index) => (
 							<div
-								className="col-lg-40 col-md-100 col-sm-100"
+								className="col-lg-33 col-md-100 col-sm-100"
 								key={index}
 							>
 								<Card card={diary} />
