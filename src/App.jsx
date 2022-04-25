@@ -12,6 +12,7 @@ import Register from "./pages/Register/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Logout from "./components/Logout";
+import Diary from "./pages/Diary/Diary";
 
 const App = () => {
 	AOS.init();
@@ -35,7 +36,14 @@ const App = () => {
 						</PrivateRoute>
 					}
 				/>
-				{/* <Route path="/diary/:id" element={<PrivateRoute></PrivateRoute>} /> */}
+				<Route
+					path="/diary/:id"
+					element={
+						<PrivateRoute>
+							<Diary />
+						</PrivateRoute>
+					}
+				/>
 				<Route
 					path="/logout"
 					element={
