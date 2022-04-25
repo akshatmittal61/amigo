@@ -64,5 +64,79 @@ const diaries = [
 		color: "#c15b1d",
 		time: new Date(2018, 11, 24, 10, 33, 30),
 	},
+	{
+		id: "aldh32bd929",
+		title: "Development",
+		about: "This is a blog about MERN Stack Development",
+		content: (
+			<>
+				<h1>Development</h1>
+				<blockquote>
+					Website without visitors is like a ship lost in the horizon.
+				</blockquote>
+				<img
+					src="https://wallpaperaccess.com/full/1657789.jpg"
+					alt="wallpapercave"
+				/>
+				<p>
+					A front-end dev takes care of layout, design and
+					interactivity using HTML, CSS and JavaScript. They take an
+					idea from the drawing board and turn it into reality. What
+					you see and what you use, such as the visual aspect of the
+					website, the drop down menus and the text, are all brought
+					together by the front-end dev, who writes a series of
+					programmes to bind and structure the elements, make them
+					look good and add interactivity.
+				</p>
+				<h3>Browsers: </h3>
+				<p>
+					These programmes are run through a browser. The backend
+					developer engineers what is going on behind the scenes. This
+					is where the data is stored, and without this data, there
+					would be no frontend. The backend of the web consists of the
+					server that hosts the website, an application for running it
+					and a database to contain the data.
+				</p>
+				<p>
+					The backend dev uses computer programmes to ensure that the
+					server, the application and the database run smoothly
+					together. This type of dev need to analyse what a company’s
+					needs are and provide efficient programming solutions. To do
+					all this amazing stuff they use a variety of server-side
+					languages, like PHP, Ruby, Python and Java.
+				</p>
+				<ul>
+					<li>Canada</li>
+					<li>Unites States</li>
+					<li>Australia</li>
+					<li>Brazil</li>
+				</ul>
+				<table>
+					<thead>
+						<tr>
+							<th>S. No.</th>
+							<th>Name</th>
+							<th>Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>20107</td>
+							<td>Akshat Mittal</td>
+							<td>MERN Stack Developer</td>
+						</tr>
+						<tr>
+							<td>20106</td>
+							<td>Akshat Khosya</td>
+							<td>MERN Stack Developer</td>
+						</tr>
+					</tbody>
+				</table>
+			</>
+		),
+		cover: "https://wallpapercave.com/uwp/uwp903093.jpeg",
+		color: "#c15b1d",
+		time: new Date(2018, 11, 24, 10, 33, 30),
+	},
 ];
 export default diaries;

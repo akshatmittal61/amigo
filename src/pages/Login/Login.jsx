@@ -32,7 +32,6 @@ const Login = () => {
 		localStorage.setItem("isAuthenticated", true);
 	};
 	useEffect(() => {
-		console.log('Login');
 		if (isAuthenticated) navigate("/dashboard");
 	}, [isAuthenticated]);
 

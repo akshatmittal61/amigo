@@ -35,6 +35,7 @@ const App = () => {
 						</PrivateRoute>
 					}
 				/>
+				{/* <Route path="/diary/:id" element={<PrivateRoute></PrivateRoute>} /> */}
 				<Route
 					path="/logout"
 					element={

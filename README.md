@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![Amigo](./public/images/favicon-128.png)
+<img src="./public/images/favicon-128.png" alt="Amigo" />
 
 </p>
 
