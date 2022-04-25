@@ -9,7 +9,9 @@
   transition: all 0.25s ease-in-out;
 }
 
-:root {
+:root,
+:root::before,
+:root::after {
   --bgcolor: #f0f0f0;
   --bgcolor-400: #d2d2d2;
   --bgcolor-100: #e1e1e1;
@@ -448,6 +450,7 @@ select::placeholder {
 
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
   background-color: #f5f5f5;
 }
 ::-webkit-scrollbar-track {

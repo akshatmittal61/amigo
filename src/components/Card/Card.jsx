@@ -8,7 +8,9 @@ const Card = ({ card }) => {
 	const t = card.time;
 	const navigate = useNavigate();
 	return (
-		<div className="card">
+		<div className="card" style={{
+			backgroundColor: card.color
+		}}>
 			<div
 				className="card-image"
 				style={{
