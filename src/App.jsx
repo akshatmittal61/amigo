@@ -13,6 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Logout from "./components/Logout";
 import Diary from "./pages/Diary/Diary";
+import Write from "./pages/Write/Write";
 
 const App = () => {
 	AOS.init();
@@ -41,6 +42,14 @@ const App = () => {
 					element={
 						<PrivateRoute>
 							<Diary />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/write"
+					element={
+						<PrivateRoute>
+							<Write />
 						</PrivateRoute>
 					}
 				/>

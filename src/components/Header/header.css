@@ -13,6 +13,14 @@
 .header-nav__icon {
   margin: 0 0.5rem;
 }
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header-right > * {
+  margin: 0 0.5rem;
+}
 .header-user {
   width: 3rem;
   height: 3rem;

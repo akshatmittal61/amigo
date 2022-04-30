@@ -8,9 +8,12 @@ const Card = ({ card }) => {
 	const t = card.time;
 	const navigate = useNavigate();
 	return (
-		<div className="card" style={{
-			backgroundColor: card.color
-		}}>
+		<div
+			className="card"
+			style={{
+				backgroundColor: card.color,
+			}}
+		>
 			<div
 				className="card-image"
 				style={{
@@ -27,7 +30,8 @@ const Card = ({ card }) => {
 				</div>
 				<div className="card-content-addons">
 					<div className="card-content-addons__date">
-						<Calendar />{`${t.getDate()}/${t.getMonth()}/${t.getFullYear()}`}
+						<Calendar />
+						{`${t.getDate()}/${t.getMonth()}/${t.getFullYear()}`}
 					</div>
 					<div className="card-content-addons__read">
 						<Button

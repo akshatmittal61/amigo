@@ -1,0 +1,50 @@
+.write-body {
+  width: 90%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.write-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+}
+.write-form-group {
+  width: 90%;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.write-form label {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+.write-form input,
+.write-form textarea {
+  width: 100%;
+  background-color: rgba(150, 150, 150, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.write-form input:active, .write-form input:focus,
+.write-form textarea:active,
+.write-form textarea:focus {
+  background-color: rgba(150, 150, 150, 0.3);
+}
+.write-form input[type=color],
+.write-form textarea[type=color] {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+.write-form textarea {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=write.css.map */
