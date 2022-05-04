@@ -11,6 +11,20 @@ const Diary = () => {
 	const body = document.querySelector("body");
 	const [diary, setDiary] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
+	const parseContent = (s) => {
+		const parser = new DOMParser();
+		let a = parser.parseFromString(s, "text/html");
+		let b = Array.from(a.body.children);
+		const diaryContent = document.createElement("div");
+		diaryContent.className = "diary-content";
+		b.forEach((ele) => {
+			diaryContent.append(ele);
+		});
+		return <div ref={(ref) => ref.appendChild(diaryContent)}></div>;
+	};
+	const getHTML = (s) => {
+		return { __html: s };
+	};
 	useEffect(() => {
 		diaries.forEach((d) => {
 			if (id === d.id) {
@@ -44,7 +58,10 @@ const Diary = () => {
 								</span>
 							</div>
 						</div>
-						<div className="diary-content">{diary.content}</div>
+						<div
+							className="diary-content"
+							dangerouslySetInnerHTML={getHTML(diary.content)}
+						></div>
 					</div>
 				)}
 			</section>

@@ -26,24 +26,10 @@ const Write = () => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setNewDiary({
-			...newDiary,
-			time: new Date(newDiary.time),
-		});
-		console.log(newDiary);
 		diaries.push({
 			...newDiary,
 			id: "1kdbj2k",
 			time: new Date(newDiary.time),
-		});
-		setNewDiary({
-			title: "",
-			about: "",
-			content: "",
-			cover: "",
-			color: "#b4c6f0",
-			time:
-				moment().format("yyyy-MM-DD") + "T" + moment().format("HH:mm"),
 		});
 	};
 	useEffect(() => {
