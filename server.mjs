@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
 	res.send("Hello World");
 });
 app.use("/api/auth", apiAuth);
+app.use("/api/diary", apiAuth);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
