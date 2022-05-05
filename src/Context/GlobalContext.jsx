@@ -13,13 +13,7 @@ export const GlobalProvider = ({ children }) => {
 	const axiosInstance = axios.create({
 		baseURL: "http://localhost:4000/",
 	});
-	const [user, setUser] = useState({
-		name: "Akshat Mittal",
-		email: "akshatmittal2506@gmail.com",
-		username: "akshatmittal61",
-		avatar: "https://avatars.githubusercontent.com/u/84612609?v=4",
-		id: '12enln21e'
-	});
+	const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 	return (
 		<GlobalContext.Provider
 			value={{

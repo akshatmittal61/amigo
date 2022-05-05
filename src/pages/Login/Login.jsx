@@ -8,8 +8,13 @@ import "./login.css";
 
 const Login = () => {
 	const navigate = useNavigate();
-	const { axiosInstance, isAuthenticated, setIsAuthenticated, setIsLoading } =
-		useContext(GlobalContext);
+	const {
+		axiosInstance,
+		isAuthenticated,
+		setIsAuthenticated,
+		setIsLoading,
+		setUser,
+	} = useContext(GlobalContext);
 	const [loginUser, setLoginUser] = useState({
 		username: "",
 		password: "",
@@ -50,8 +55,11 @@ const Login = () => {
 				password: "",
 			});
 			setIsAuthenticated(true);
+			console.log(JSON.stringify(response.data.user));
 			localStorage.setItem("isAuthenticated", true);
 			localStorage.setItem("token", response.data.token);
+			localStorage.setItem("user", JSON.stringify(response.data.user));
+			setUser(response.data.user);
 			setIsLoading(false);
 		} catch (error) {
 			setSnack({

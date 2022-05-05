@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const register = async (req, res) => {
-	const { fname, lname, email, username, password } = req.body;
+	const { fname, lname, email, username, password, avatar } = req.body;
 	if (!fname || !lname || !email || !password || !username)
 		return res.status(400).json({ message: "Invalid Data" });
 	if (password.length < 6)
@@ -15,7 +15,7 @@ const register = async (req, res) => {
 		if (user) {
 			return res.status(400).json({ message: "User already registered" });
 		}
-		user = new User({ fname, lname, email, password, username });
+		user = new User({ fname, lname, email, password, username, avatar });
 		user.password = await bcrypt.hash(password, 10);
 		await user.save();
 		const payload = {
@@ -60,13 +60,23 @@ const login = async (req, res) => {
 				id: user.id,
 			},
 		};
+		const sendUser = {
+			fname: user.fname,
+			lname: user.lname,
+			username: user.username,
+			avatar: user.avatar,
+		};
 		jwt.sign(
 			payload,
 			process.env.JWT_SECRET,
 			{ expiresIn: 360000 },
 			(err, token) => {
 				if (err) throw err;
-				res.status(200).json({ token, message: "Login successful" });
+				res.status(200).json({
+					token,
+					user: { ...sendUser },
+					message: "Login successful",
+				});
 			}
 		);
 	} catch (error) {

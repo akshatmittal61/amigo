@@ -58,7 +58,8 @@ const Register = () => {
 		} else {
 			try {
 				setIsLoading(true);
-				const { email, password, fname, lname, username } = user;
+				const { email, password, fname, lname, username, avatar } =
+					user;
 				const response = await axiosInstance.post(
 					"/api/auth/register",
 					{
@@ -67,6 +68,7 @@ const Register = () => {
 						fname,
 						lname,
 						username,
+						avatar,
 					}
 				);
 				setSnack({

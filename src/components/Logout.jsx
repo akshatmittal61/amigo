@@ -3,11 +3,13 @@ import { Navigate } from "react-router-dom";
 import GlobalContext from "../Context/GlobalContext";
 
 const Logout = () => {
-	const { setIsAuthenticated } = useContext(GlobalContext);
+	const { setIsAuthenticated, setUser } = useContext(GlobalContext);
 	useEffect(() => {
 		setIsAuthenticated(false);
 		localStorage.setItem("isAuthenticated", false);
 		localStorage.setItem("token", null);
+		localStorage.setItem("user", null);
+		setUser(null);
 	}, []);
 	return <Navigate to="/login" />;
 };
