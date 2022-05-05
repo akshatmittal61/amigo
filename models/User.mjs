@@ -28,6 +28,11 @@ const UserSchema = new mongoose.Schema(
 			type: Boolean,
 			default: false,
 		},
+		avatar: {
+			type: String,
+			default:
+				"https://raw.githubusercontent.com/akshatmittal61/amigo/master/public/images/favicon.svg",
+		},
 	},
 	{ timestamps: true }
 );

@@ -1,12 +1,22 @@
-import React, { useState } from "react";
-import { ArrowLeftCircle, AtSign, Key, Lock, Mail, User } from "react-feather";
+import React, { useContext, useState } from "react";
+import {
+	ArrowLeftCircle,
+	AtSign,
+	Camera,
+	Key,
+	Lock,
+	Mail,
+	User,
+} from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import SnackBar from "../../components/SnackBar/SnackBar";
+import GlobalContext from "../../Context/GlobalContext";
 import "./register.css";
 
 const Register = () => {
 	const navigate = useNavigate();
+	const { axiosInstance, setIsLoading } = useContext(GlobalContext);
 	const [user, setUser] = useState({
 		fname: "",
 		lname: "",
@@ -14,6 +24,7 @@ const Register = () => {
 		username: "",
 		password: "",
 		confirmPassword: "",
+		avatar: "",
 	});
 	const [snack, setSnack] = useState({
 		text: "Registered successfuly, create your profile now",
@@ -28,41 +39,67 @@ const Register = () => {
 			[name]: value,
 		});
 	};
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (user.password !== user.confirmPassword) {
+			setUser({
+				...user,
+				confirmPassword: "",
+			});
 			setSnack({
 				text: "Passwords do not match",
 				bgColor: "var(--red)",
 				color: "var(--white)",
-			});
-			setUser({
-				...user,
-				confirmPassword: "",
 			});
 			setOpen(true);
 			setTimeout(() => {
 				setOpen(false);
 			}, 5000);
 		} else {
-			setSnack({
-				text: "Registered successfuly, create your profile now",
-				bgColor: "var(--green)",
-				color: "var(--white)",
-			});
-			setOpen(true);
-			setTimeout(() => {
-				setOpen(false);
-			}, 5000);
-			console.log(user);
-			setUser({
-				fname: "",
-				lname: "",
-				email: "",
-				username: "",
-				password: "",
-				confirmPassword: "",
-			});
+			try {
+				setIsLoading(true);
+				const { email, password, fname, lname, username } = user;
+				const response = await axiosInstance.post(
+					"/api/auth/register",
+					{
+						email,
+						password,
+						fname,
+						lname,
+						username,
+					}
+				);
+				setSnack({
+					text: response.data.message,
+					bgColor: "var(--green)",
+					color: "var(--white)",
+				});
+				setOpen(true);
+				setTimeout(() => {
+					setOpen(false);
+				}, 5000);
+				setUser({
+					fname: "",
+					lname: "",
+					email: "",
+					username: "",
+					password: "",
+					confirmPassword: "",
+					avatar: "",
+				});
+				setIsLoading(false);
+			} catch (error) {
+				setSnack({
+					text: error.response.data.message,
+					bgColor: "var(--red)",
+					color: "var(--white)",
+				});
+				setOpen(true);
+				setTimeout(() => {
+					setOpen(false);
+				}, 5000);
+				setIsLoading(false);
+			}
 		}
 	};
 	return (
@@ -168,6 +205,20 @@ const Register = () => {
 										value={user.confirmPassword}
 										onChange={handleChange}
 										required
+									/>
+								</div>
+							</div>
+							<div className="col-lg-100 col-md-100 col-sm-100">
+								<div className="register-form-group">
+									<label>
+										<Camera />
+									</label>
+									<input
+										type="url"
+										name="avatar"
+										placeholder="Avatar"
+										value={user.avatar}
+										onChange={handleChange}
 									/>
 								</div>
 							</div>

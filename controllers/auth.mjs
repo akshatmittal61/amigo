@@ -8,7 +8,7 @@ const register = async (req, res) => {
 		return res.status(400).json({ message: "Invalid Data" });
 	if (password.length < 6)
 		return res.status(400).json({
-			message: "Password should be more of 6 characters minimum",
+			message: "Password should be a minimum of 6 characters",
 		});
 	try {
 		let user = await User.findOne({ email });
@@ -29,9 +29,10 @@ const register = async (req, res) => {
 			{ expiresIn: 360000 },
 			(err, token) => {
 				if (err) throw err;
-				return res
-					.status(200)
-					.json({ token, message: "User registered" });
+				return res.status(200).json({
+					token: token,
+					message: "User registered. Login to continue",
+				});
 			}
 		);
 	} catch (error) {

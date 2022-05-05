@@ -2,34 +2,69 @@ import React, { useState, useEffect, useContext } from "react";
 import { ArrowLeftCircle, AtSign, Key } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import SnackBar from "../../components/SnackBar/SnackBar";
 import GlobalContext from "../../Context/GlobalContext";
 import "./login.css";
 
 const Login = () => {
 	const navigate = useNavigate();
-	const { isAuthenticated, setIsAuthenticated, setIsLoading } =
+	const { axiosInstance, isAuthenticated, setIsAuthenticated, setIsLoading } =
 		useContext(GlobalContext);
-	const [user, setUser] = useState({
+	const [loginUser, setLoginUser] = useState({
 		username: "",
 		password: "",
 	});
+	const [snack, setSnack] = useState({
+		text: "Registered successfuly, create your profile now",
+		bgColor: "var(--green)",
+		color: "var(--white)",
+	});
+	const [open, setOpen] = useState(false);
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setUser({
-			...user,
+		setLoginUser({
+			...loginUser,
 			[name]: value,
 		});
 	};
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(user);
-		setUser({
-			username: "",
-			password: "",
-		});
-		setIsAuthenticated(true);
-		setIsLoading(false);
-		localStorage.setItem("isAuthenticated", true);
+		try {
+			setIsLoading(true);
+			const { password, username } = loginUser;
+			const response = await axiosInstance.post("/api/auth/login", {
+				password,
+				username,
+			});
+			setSnack({
+				text: response.data.message,
+				bgColor: "var(--green)",
+				color: "var(--white)",
+			});
+			setOpen(true);
+			setTimeout(() => {
+				setOpen(false);
+			}, 5000);
+			setLoginUser({
+				username: "",
+				password: "",
+			});
+			setIsAuthenticated(true);
+			localStorage.setItem("isAuthenticated", true);
+			localStorage.setItem("token", response.data.token);
+			setIsLoading(false);
+		} catch (error) {
+			setSnack({
+				text: error.response.data.message,
+				bgColor: "var(--red)",
+				color: "var(--white)",
+			});
+			setOpen(true);
+			setTimeout(() => {
+				setOpen(false);
+			}, 5000);
+			setIsLoading(false);
+		}
 	};
 	useEffect(() => {
 		if (isAuthenticated) navigate("/dashboard");
@@ -58,7 +93,7 @@ const Login = () => {
 								type="text"
 								name="username"
 								placeholder="Username"
-								value={user.username}
+								value={loginUser.username}
 								onChange={handleChange}
 								required
 							/>
@@ -71,7 +106,7 @@ const Login = () => {
 								type="password"
 								name="password"
 								placeholder="Password"
-								value={user.password}
+								value={loginUser.password}
 								onChange={handleChange}
 								required
 							/>
@@ -86,6 +121,14 @@ const Login = () => {
 					</div>
 				</div>
 			</div>
+			{open && (
+				<SnackBar
+					text={snack.text}
+					bgColor={snack.bgColor}
+					color={snack.color}
+					close={() => setOpen(false)}
+				/>
+			)}
 		</section>
 	);
 };
