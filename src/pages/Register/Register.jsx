@@ -129,6 +129,7 @@ const Register = () => {
 										type="text"
 										name="fname"
 										placeholder="First Name"
+										aria-details="First Name"
 										value={user.fname}
 										onChange={handleChange}
 										required
@@ -144,6 +145,7 @@ const Register = () => {
 										type="text"
 										name="lname"
 										placeholder="Last Name"
+										aria-details="Last Name"
 										value={user.lname}
 										onChange={handleChange}
 										required
@@ -159,6 +161,7 @@ const Register = () => {
 										type="email"
 										name="email"
 										placeholder="E Mail"
+										aria-details="E Mail"
 										value={user.email}
 										onChange={handleChange}
 										required
@@ -174,6 +177,7 @@ const Register = () => {
 										type="text"
 										name="username"
 										placeholder="Username"
+										aria-details="Username"
 										value={user.username}
 										onChange={handleChange}
 										required
@@ -189,6 +193,7 @@ const Register = () => {
 										type="password"
 										name="password"
 										placeholder="Password"
+										aria-details="Password"
 										value={user.password}
 										onChange={handleChange}
 										required
@@ -204,6 +209,7 @@ const Register = () => {
 										type="password"
 										name="confirmPassword"
 										placeholder="Confirm Password"
+										aria-details="Confirm Password"
 										value={user.confirmPassword}
 										onChange={handleChange}
 										required
@@ -219,6 +225,7 @@ const Register = () => {
 										type="url"
 										name="avatar"
 										placeholder="Avatar"
+										aria-details="Avatar"
 										value={user.avatar}
 										onChange={handleChange}
 									/>

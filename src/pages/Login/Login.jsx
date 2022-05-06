@@ -101,6 +101,7 @@ const Login = () => {
 								type="text"
 								name="username"
 								placeholder="Username"
+								aria-details="Username"
 								value={loginUser.username}
 								onChange={handleChange}
 								required
@@ -114,6 +115,7 @@ const Login = () => {
 								type="password"
 								name="password"
 								placeholder="Password"
+								aria-details="Password"
 								value={loginUser.password}
 								onChange={handleChange}
 								required

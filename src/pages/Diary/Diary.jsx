@@ -37,7 +37,7 @@ const Diary = () => {
 				...response.data,
 				time: new Date(response.data.time),
 			});
-			body.style.backgroundImage = `url(${response.diary.cover})`;
+			body.style.backgroundImage = `url(${response.data.cover})`;
 		} catch (error) {
 			setIsLoading(false);
 		}

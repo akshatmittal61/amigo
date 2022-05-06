@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Airplay, Home, Info, LogIn, LogOut } from "react-feather";
+import { Airplay, Edit, Home, Info, LogIn, LogOut } from "react-feather";
 import { Link } from "react-router-dom";
 import GlobalContext from "../../Context/GlobalContext";
 import "./navigation.css";
@@ -23,14 +23,14 @@ const Navigation = () => {
 			title: "Home",
 		},
 		{
-			icon: <Info />,
-			link: "/about",
-			title: "About Amigo",
-		},
-		{
 			icon: <Airplay />,
 			link: "/dashboard",
 			title: "Dashboard",
+		},
+		{
+			icon: <Edit />,
+			link: "/write",
+			title: "Write Diary",
 		},
 		{
 			icon: isAuthenticated ? <LogOut /> : <LogIn />,

@@ -64,6 +64,7 @@ const Write = () => {
 								type="text"
 								name="title"
 								placeholder="Enter Title..."
+								aria-details="Enter Title..."
 								value={newDiary.title}
 								onChange={handleChange}
 								autoFocus
@@ -74,6 +75,7 @@ const Write = () => {
 								type="text"
 								name="about"
 								placeholder="About this diary entry..."
+								aria-details="About this diary entry..."
 								value={newDiary.about}
 								onChange={handleChange}
 							/>
@@ -83,6 +85,7 @@ const Write = () => {
 								type="url"
 								name="cover"
 								placeholder="Cover Image URL"
+								aria-details="Cover Image URL"
 								value={newDiary.cover}
 								onChange={handleChange}
 							/>
@@ -104,6 +107,7 @@ const Write = () => {
 								id="color"
 								name="color"
 								placeholder="A theme color"
+								aria-details="A theme color"
 								value={newDiary.color}
 								onChange={handleChange}
 								style={{
@@ -118,6 +122,7 @@ const Write = () => {
 								type="datetime-local"
 								name="time"
 								placeholder="Date and Time"
+								aria-details="Date and Time"
 								value={newDiary.time.toString()}
 								onChange={handleChange}
 							/>
@@ -126,6 +131,7 @@ const Write = () => {
 							<textarea
 								name="content"
 								placeholder="Your Diary here"
+								aria-details="Your Diary here"
 								value={newDiary.content}
 								onChange={handleChange}
 								rows={10}
