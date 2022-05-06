@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Book, Calendar, Clock } from "react-feather";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Main from "../../components/Main/Main";
 import diaries from "../../diaries";
 import "./diary.css";
+import _ from "lodash";
+import GlobalContext from "../../Context/GlobalContext";
 
 const Diary = () => {
+	const { axiosInstance } = useContext(GlobalContext);
 	const { id } = useParams();
 	const body = document.querySelector("body");
 	const [diary, setDiary] = useState(null);
@@ -25,13 +28,23 @@ const Diary = () => {
 	const getHTML = (s) => {
 		return { __html: s };
 	};
+	const getDiary = async () => {
+		setDiary([]);
+		try {
+			const response = await axiosInstance(`/api/diary/single/${id}`);
+			setDiary({ ...response.data, time: new Date(response.data.time) });
+			console.log({
+				...response.data,
+				time: new Date(response.data.time),
+			});
+			body.style.backgroundImage = `url(${response.diary.cover})`;
+		} catch (error) {
+			setIsLoading(false);
+		}
+	};
 	useEffect(() => {
-		diaries.forEach((d) => {
-			if (id === d.id) {
-				setDiary(d);
-				body.style.backgroundImage = `url(${d.cover})`;
-			}
-		});
+		setIsLoading(true);
+		getDiary();
 		setIsLoading(false);
 	}, [id]);
 	return (
@@ -44,12 +57,14 @@ const Diary = () => {
 							<h1>{diary.title}</h1>
 						</div>
 						<span className="diary-about">{diary.about}</span>
-						<div className="diary-schedule">
+						{/* <div className="diary-schedule">
 							<div className="diary-date">
 								<Calendar />{" "}
-								<span>
-									{`${diary.time.getDate()}/${diary.time.getMonth()}/${diary.time.getFullYear()}`}
-								</span>
+								{!isLoading && (
+									<span>
+										{`${diary.time.getDate()}/${diary.time.getMonth()}/${diary.time.getFullYear()}`}
+									</span>
+								)}
 							</div>
 							<div className="diary-time">
 								<Clock />{" "}
@@ -57,7 +72,7 @@ const Diary = () => {
 									{`${diary.time.getHours()}:${diary.time.getMinutes()}`}
 								</span>
 							</div>
-						</div>
+						</div> */}
 						<div
 							className="diary-content"
 							dangerouslySetInnerHTML={getHTML(diary.content)}

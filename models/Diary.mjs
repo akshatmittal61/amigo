@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema({
+const DiarySchema = new mongoose.Schema({
+	user: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "users",
+	},
 	title: {
 		type: String,
 		required: true,
@@ -14,20 +18,18 @@ const UserSchema = new mongoose.Schema({
 	},
 	cover: {
 		type: String,
-		required: true,
 		default:
 			"https://github.com/akshatmittal61/amigo/blob/master/public/images/favicon.png",
 	},
 	color: {
 		type: String,
-		required: true,
 		default: "#89add7",
 	},
 	time: {
-		type: Date,
+		type: String,
 		required: true,
 	},
 });
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model("diary", DiarySchema);
 export default User;

@@ -12,6 +12,10 @@ export const GlobalProvider = ({ children }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const axiosInstance = axios.create({
 		baseURL: "http://localhost:4000/",
+		headers: {
+			"x-auth-token": localStorage.getItem("token"),
+			"Content-Type": "application/json",
+		},
 	});
 	const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 	return (

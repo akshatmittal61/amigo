@@ -3,6 +3,7 @@ import cors from "cors";
 import { config } from "dotenv";
 import mongoose from "mongoose";
 import apiAuth from "./routes/auth.mjs";
+import apiDiary from "./routes/diary.mjs";
 config();
 const app = express();
 const connectDB = async () => {
@@ -22,7 +23,7 @@ app.get("/", (req, res) => {
 	res.send("Hello World");
 });
 app.use("/api/auth", apiAuth);
-app.use("/api/diary", apiAuth);
+app.use("/api/diary", apiDiary);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`));

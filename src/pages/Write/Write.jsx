@@ -1,14 +1,16 @@
 import moment from "moment";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Edit2 } from "react-feather";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import Main from "../../components/Main/Main";
+import GlobalContext from "../../Context/GlobalContext";
 import diaries from "../../diaries";
 import "./write.css";
 
 const Write = () => {
 	const body = document.querySelector("body");
+	const { axiosInstance } = useContext(GlobalContext);
 	const [newDiary, setNewDiary] = useState({
 		title: "",
 		about: "",
@@ -24,13 +26,27 @@ const Write = () => {
 			[name]: value,
 		});
 	};
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		diaries.push({
+		try {
+			const response = await axiosInstance.post(
+				"/api/diary/new",
+				newDiary
+			);
+			console.log(response.data.diary);
+		} catch (error) {
+			console.log(error);
+		}
+		/* console.log({
 			...newDiary,
 			id: "1kdbj2k",
 			time: new Date(newDiary.time),
 		});
+		diaries.push({
+			...newDiary,
+			id: "1kdbj2k",
+			time: new Date(newDiary.time),
+		}); */
 	};
 	useEffect(() => {
 		body.style.backgroundColor = "var(--wp--preset--color--pale-cyan-blue)";
