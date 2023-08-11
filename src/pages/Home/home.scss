@@ -1,0 +1,134 @@
+@import "../../responsive";
+.home {
+	width: 100%;
+	&-hero {
+		width: 100vw;
+		height: 60vh;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-flow: column;
+		background: var(
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple
+		);
+		background-attachment: fixed;
+		color: var(--wp--preset--color--white);
+		box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 30%);
+		text-align: center;
+
+		&-image {
+			width: 50%;
+			height: 45%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				border-radius: 500px;
+				outline: 8px solid rgb(255, 255, 255, 0.25);
+				background: var(
+					--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray
+				);
+			}
+		}
+		&-title {
+			font-size: 6rem;
+			line-height: 7rem;
+			font-family: "Caveat", sans-serif;
+			letter-spacing: 0.35rem;
+		}
+		&-subtitle {
+			font-size: 2.5rem;
+			line-height: 3rem;
+			font-family: "Just Me again down here", cursive;
+		}
+	}
+	&-ss {
+		width: 100%;
+		min-height: 75vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
+		margin: 3rem 0;
+		// padding: 3rem 0;
+		img {
+			max-width: 75%;
+			margin: 2rem;
+		}
+	}
+	&-about {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem 0;
+		&-card {
+			width: 90%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-flow: column;
+			text-align: center;
+			@include respond(phone) {
+				flex-flow: row;
+				text-align: left;
+			}
+			&-icon {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 2rem 2rem 0 2rem;
+				svg {
+					width: 4rem;
+					height: 4rem;
+					color: var(--wp--preset--color--vivid-cyan-blue);
+				}
+				@include respond(phone) {
+					width: 20%;
+					padding: 1rem;
+				}
+			}
+			&-content {
+				width: 100%;
+				padding: 1.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-flow: column;
+				&__title {
+					font-size: 1.5rem;
+					line-height: 2rem;
+					white-space: nowrap;
+					padding: 0.5rem 0;
+				}
+				&__subtitle {
+					font-size: 1.1rem;
+					line-height: 1.75rem;
+				}
+				@include respond(phone) {
+					align-items: flex-start;
+					width: 80%;
+					text-align: left;
+				}
+			}
+		}
+		a {
+			color: var(--color-main);
+			&:hover {
+				color: var(--color-main-hover);
+			}
+		}
+	}
+	&-faq {
+		margin: 2rem 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-flow: column;
+		& > * {
+			margin: 1rem 0;
+		}
+	}
+}

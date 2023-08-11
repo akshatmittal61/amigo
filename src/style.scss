@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Cookie&family=Dancing+Script&family=Gaegu&family=Handlee&family=Indie+Flower&family=Just+Me+Again+Down+Here&family=Kalam&family=Megrim&family=Montserrat:wght@100;400;700&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@100;400;700&family=Redressed&family=Reenie+Beanie&family=Roboto&family=Sacramento&display=swap");
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	transition: all 0.25s ease-in-out;
+}
+:root,
+:root::before,
+:root::after {
+	--bgcolor: #f0f0f0;
+	--bgcolor-400: #d2d2d2;
+	--bgcolor-100: #e1e1e1;
+	--bgcolor-700: #c3c3c3;
+
+	--tcolor: #121212;
+	--tcolor-100: #333333;
+	--tcolor-400: #272727;
+	--tcolor-700: #1d1d1d;
+
+	--primary: #bf9673;
+	--primary-100: #bfa68f;
+	--primary-400: #a6785d;
+	--primary-700: #9f562e;
+
+	--favicon: #5385cd;
+	--office-blue: #17395a;
+	--white: #ffffff;
+	--black: #000000;
+
+	--back-shadow: rgba(0, 0, 0, 0.2);
+	--back-shadow-light: rgba(0, 0, 0, 0.1);
+	--back-shadow-dark: rgba(0, 0, 0, 0.25);
+	--transition-time: 200ms;
+	--shadow-3d: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+	--color-background-footer: #242326;
+	--color-main: #4e8bd2;
+	--color-main-hover: #447ab8;
+	--color-text-button: #f1f1f1;
+	--color-text-header: #d8d8d8;
+	--color-text-footer: #939ea7;
+	--color-text-footer-hover: #b7bec5;
+	--color-background: #f1f1f1;
+	--color-selection: #b7cbe4;
+	--color-text: #4e4e4e;
+	--color-text-heading: #212121;
+
+	--ast-global-color-0: #0170b9;
+	--ast-global-color-1: #3a3a3a;
+	--ast-global-color-2: #3a3a3a;
+	--ast-global-color-3: #4b4f58;
+	--ast-global-color-4: #f5f5f5;
+	--ast-global-color-5: #ffffff;
+	--ast-global-color-6: #f2f5f7;
+	--ast-global-color-7: #424242;
+	--ast-global-color-8: #000000;
+
+	--wp--preset--color--black: #000000;
+	--wp--preset--color--cyan-bluish-gray: #abb8c3;
+	--wp--preset--color--white: #ffffff;
+	--wp--preset--color--pale-pink: #f78da7;
+	--wp--preset--color--vivid-red: #cf2e2e;
+	--wp--preset--color--luminous-vivid-orange: #ff6900;
+	--wp--preset--color--luminous-vivid-amber: #fcb900;
+	--wp--preset--color--light-green-cyan: #7bdcb5;
+	--wp--preset--color--vivid-green-cyan: #00d084;
+	--wp--preset--color--pale-cyan-blue: #8ed1fc;
+	--wp--preset--color--vivid-cyan-blue: #0693e3;
+	--wp--preset--color--vivid-purple: #9b51e0;
+
+	--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(
+		135deg,
+		rgba(6, 147, 227, 1) 0%,
+		rgb(155, 81, 224) 100%
+	);
+	--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(
+		135deg,
+		rgb(122, 220, 180) 0%,
+		rgb(0, 208, 130) 100%
+	);
+	--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(
+		135deg,
+		rgba(252, 185, 0, 1) 0%,
+		rgba(255, 105, 0, 1) 100%
+	);
+	--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(
+		135deg,
+		rgba(255, 105, 0, 1) 0%,
+		rgb(207, 46, 46) 100%
+	);
+	--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(
+		135deg,
+		rgb(238, 238, 238) 0%,
+		rgb(169, 184, 195) 100%
+	);
+	--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(
+		135deg,
+		rgb(74, 234, 220) 0%,
+		rgb(151, 120, 209) 20%,
+		rgb(207, 42, 186) 40%,
+		rgb(238, 44, 130) 60%,
+		rgb(251, 105, 98) 80%,
+		rgb(254, 248, 76) 100%
+	);
+	--wp--preset--gradient--blush-light-purple: linear-gradient(
+		135deg,
+		rgb(255, 206, 236) 0%,
+		rgb(152, 150, 240) 100%
+	);
+	--wp--preset--gradient--blush-bordeaux: linear-gradient(
+		135deg,
+		rgb(254, 205, 165) 0%,
+		rgb(254, 45, 45) 50%,
+		rgb(107, 0, 62) 100%
+	);
+	--wp--preset--gradient--luminous-dusk: linear-gradient(
+		135deg,
+		rgb(255, 203, 112) 0%,
+		rgb(199, 81, 192) 50%,
+		rgb(65, 88, 208) 100%
+	);
+	--wp--preset--gradient--pale-ocean: linear-gradient(
+		135deg,
+		rgb(255, 245, 203) 0%,
+		rgb(182, 227, 212) 50%,
+		rgb(51, 167, 181) 100%
+	);
+	--wp--preset--gradient--electric-grass: linear-gradient(
+		135deg,
+		rgb(202, 248, 128) 0%,
+		rgb(113, 206, 126) 100%
+	);
+	--wp--preset--gradient--midnight: linear-gradient(
+		135deg,
+		rgb(2, 3, 129) 0%,
+		rgb(40, 116, 252) 100%
+	);
+
+	--e-global-color-primary: #b97a67;
+	--e-global-color-secondary: #975c4a;
+	--e-global-color-text: #484848;
+	--e-global-color-accent: #e3c9c1;
+	--e-global-color-79041ffd: #000000;
+	--e-global-color-393f25d7: #ffffff;
+
+	--red: #f44336;
+	--red-100: #ffcdd2;
+	--red-400: #ef5350;
+	--red-700: #d32f2f;
+
+	--pink: #e91e63;
+	--pink-100: #f8bbd0;
+	--pink-400: #ec407a;
+	--pink-700: #c2185b;
+
+	--purple: #9c27b0;
+	--purple-100: #e1bee7;
+	--purple-400: #ab47bc;
+	--purple-700: #7b1fa2;
+
+	--dark-purple: #673ab7;
+	--dark-purple-100: #d1c4e9;
+	--dark-purple-400: #7e57c2;
+	--dark-purple-700: #512da8;
+
+	--indigo: #3f51b5;
+	--indigo-100: #c5cae9;
+	--indigo-400: #5c6bc0;
+	--indigo-700: #303f9f;
+
+	--blue: #2196f3;
+	--blue-100: #bbdefb;
+	--blue-400: #42a5f5;
+	--blue-700: #1976d2;
+
+	--light-blue: #03a9f4;
+	--light-blue-100: #b3e5fc;
+	--light-blue-400: #29b6f6;
+	--light-blue-700: #0288d1;
+
+	--cyan: #00bcd4;
+	--cyan-100: #b2ebf2;
+	--cyan-400: #26c6da;
+	--cyan-700: #0097a7;
+
+	--green: #4caf50;
+	--green-100: #c8e6c9;
+	--green-400: #66bb6a;
+	--green-700: #388e3c;
+
+	--light-green: #8bc34a;
+	--light-green-100: #dcedc8;
+	--light-green-400: #9ccc65;
+	--light-green-700: #689f38;
+
+	--yellow: #ffeb3b;
+	--yellow-100: #fff9c4;
+	--yellow-400: #ffee58;
+	--yellow-700: #fbc02d;
+
+	--orange: #ff9800;
+	--orange-100: #ffe0b2;
+	--orange-400: #ffa726;
+	--orange-700: #f57c00;
+
+	--deep-orange: #ff5722;
+	--deep-orange-100: #ffccbc;
+	--deep-orange-400: #ff7043;
+	--deep-orange-700: #e64a19;
+
+	--brown: #795548;
+	--brown-100: #d7ccc8;
+	--brown-400: #8d6e63;
+	--brown-700: #5d4037;
+
+	--grey: #9e9e9e;
+	--grey-100: #f5f5f5;
+	--grey-400: #bdbdbd;
+	--grey-700: #616161;
+
+	--blue-grey: #607d8b;
+	--blue-grey-100: #cfd8dc;
+	--blue-grey-400: #78909c;
+	--blue-grey-700: #455a64;
+
+	--blue: #4285f4;
+	--red: #ea4335;
+	--yellow: #fbbc05;
+	--green: #34a853;
+}
+
+@import "./responsive";
+@import "./variables";
+
+html {
+	font-size: 16px;
+	overflow-x: hidden;
+	@include respond(phone) {
+		font-size: 12px;
+	}
+}
+body,
+#root {
+	font-family: "Google Sans", "Cabin", -apple-system, BlinkMacSystemFont,
+		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+		"Helvetica Neue", sans-serif;
+	background-color: var(--bgcolor);
+	color: var(--tcolor);
+	font-size: 1rem;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	letter-spacing: 0.025rem;
+	word-spacing: 0.25rem;
+	line-height: 1.25rem;
+	transition: all var(--transition-time) ease-in-out;
+	overflow-x: hidden;
+	background-attachment: fixed;
+}
+#root {
+	width: 100%;
+	height: 100%;
+	flex-flow: column;
+	background: transparent;
+}
+a {
+	&,
+	&:hover,
+	&:visited,
+	&:active,
+	&:focus {
+		border: none;
+		outline: none;
+		text-decoration: none;
+		color: inherit;
+	}
+}
+img {
+	object-fit: cover;
+	max-width: 100%;
+	max-height: 100%;
+}
+main {
+	width: 100%;
+	min-height: 100vh - $head-height;
+}
+button {
+	border: none;
+	outline: none;
+	background: none;
+	font: inherit;
+	cursor: pointer;
+	user-select: none;
+}
+input,
+textarea,
+select {
+	border: none;
+	outline: none;
+	background: none;
+	font: inherit;
+	color: inherit;
+	resize: none;
+	&::placeholder {
+		user-select: none;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+	background-color: #f5f5f5;
+	&-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		background-color: #f5f5f5;
+	}
+	&-thumb {
+		border-radius: 500px;
+		background-color: var(--ast-global-color-0);
+	}
+}
+
+.material-icons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	cursor: pointer;
+}
+.dispn {
+	display: none !important;
+}
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(-0.25rem);
+	}
+	50% {
+		transform: translateY(0);
+	}
+	75% {
+		transform: translateY(0.25rem);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
